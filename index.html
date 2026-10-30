@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
   <meta charset="UTF-8">
@@ -17,7 +17,1028 @@
   <meta property="og:type" content="website">
 
   <!-- Stylesheet -->
-  <link rel="stylesheet" href="styles.css">
+  <style>
+/* ==========================================================================
+   Gaming Nickname Decorator - Ultra VIP Esports & Cyberpunk Edition
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&family=Orbitron:wght@600;800;900&family=Rajdhani:wght@600;700&display=swap');
+
+:root {
+  --bg-primary: #060911;
+  --bg-secondary: #0b1120;
+  --bg-card: rgba(15, 23, 42, 0.72);
+  --bg-card-hover: rgba(22, 34, 61, 0.9);
+  
+  --border-glass: rgba(255, 255, 255, 0.08);
+  --border-neon-cyan: rgba(0, 245, 212, 0.45);
+  --border-neon-purple: rgba(168, 85, 247, 0.45);
+  --border-gold: rgba(255, 215, 0, 0.5);
+
+  --accent-cyan: #00f5d4;
+  --accent-cyan-bright: #52ffee;
+  --accent-cyan-glow: rgba(0, 245, 212, 0.4);
+
+  --accent-purple: #a855f7;
+  --accent-purple-glow: rgba(168, 85, 247, 0.45);
+
+  --accent-gold: #ffd166;
+  --accent-gold-glow: rgba(255, 209, 102, 0.4);
+
+  --accent-red: #ff3366;
+  --accent-red-glow: rgba(255, 51, 102, 0.4);
+
+  --text-main: #f8fafc;
+  --text-muted: #94a3b8;
+  --text-dim: #64748b;
+
+  --success: #10b981;
+  --warning: #f59e0b;
+
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 22px;
+  --transition: all 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 9px;
+  height: 9px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-primary);
+}
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(to bottom, var(--accent-purple), var(--accent-cyan));
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-cyan);
+}
+
+body {
+  font-family: 'Cairo', system-ui, -apple-system, sans-serif;
+  background-color: var(--bg-primary);
+  color: var(--text-main);
+  direction: rtl;
+  min-height: 100vh;
+  line-height: 1.6;
+  overflow-x: hidden;
+  position: relative;
+  background-image: 
+    radial-gradient(circle at 10% 20%, rgba(168, 85, 247, 0.18) 0%, transparent 45%),
+    radial-gradient(circle at 90% 15%, rgba(0, 245, 212, 0.15) 0%, transparent 40%),
+    radial-gradient(circle at 50% 85%, rgba(255, 51, 102, 0.1) 0%, transparent 50%),
+    linear-gradient(to bottom, #060911, #080d1a 60%, #05070d);
+  background-attachment: fixed;
+}
+
+/* Background Cyber Grid overlay */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-size: 50px 50px;
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Ambient Canvas for interactive / floating gaming particles */
+#ambientCanvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0.75;
+}
+
+.container {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  position: relative;
+  z-index: 2;
+}
+
+/* ==========================================================================
+   Header & Navbar
+   ========================================================================== */
+header.site-header {
+  padding: 1.15rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(6, 9, 17, 0.85);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo-wrap {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  text-decoration: none;
+  color: inherit;
+}
+
+.logo-icon-wrap {
+  position: relative;
+}
+
+.logo-icon {
+  width: 48px;
+  height: 48px;
+  background: linear-gradient(135deg, #7928ca, #ff0080 50%, #00f5d4);
+  background-size: 200% 200%;
+  animation: gradientShift 6s ease infinite;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.6rem;
+  box-shadow: 0 0 20px rgba(0, 245, 212, 0.45);
+  transform: rotate(-3deg);
+  transition: var(--transition);
+}
+
+.logo-wrap:hover .logo-icon {
+  transform: rotate(0deg) scale(1.1);
+  box-shadow: 0 0 30px rgba(0, 245, 212, 0.75);
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.logo-text h1 {
+  font-size: 1.45rem;
+  font-weight: 900;
+  letter-spacing: -0.5px;
+  background: linear-gradient(90deg, #ffffff 20%, var(--accent-cyan) 80%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.vip-badge-small {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 0.65rem;
+  font-weight: 900;
+  background: linear-gradient(135deg, #ffd700, #ff8800);
+  color: #000;
+  padding: 0.15rem 0.45rem;
+  border-radius: 4px;
+  box-shadow: 0 0 10px rgba(255, 215, 0, 0.6);
+  letter-spacing: 1px;
+}
+
+.logo-text span {
+  font-size: 0.78rem;
+  color: var(--accent-gold);
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  font-family: 'Rajdhani', sans-serif;
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.icon-btn {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: var(--text-main);
+  width: 42px;
+  height: 42px;
+  border-radius: 10px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition);
+  position: relative;
+  overflow: hidden;
+}
+
+.icon-btn:hover {
+  background: rgba(0, 245, 212, 0.15);
+  border-color: var(--accent-cyan);
+  color: var(--accent-cyan);
+  transform: translateY(-2px);
+  box-shadow: 0 0 15px var(--accent-cyan-glow);
+}
+
+.icon-btn.muted {
+  color: var(--text-dim);
+  opacity: 0.5;
+}
+
+/* ==========================================================================
+   Advertisement Slots (Styled VIP Sponsor Frames)
+   ========================================================================== */
+.ad-slot-wrapper {
+  margin: 1.5rem auto;
+  max-width: 970px;
+  text-align: center;
+  position: relative;
+}
+
+.ad-slot-inner {
+  background: rgba(15, 23, 42, 0.45);
+  border: 1px dashed rgba(255, 255, 255, 0.12);
+  border-radius: var(--radius-md);
+  padding: 1.25rem 1rem;
+  min-height: 90px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  transition: var(--transition);
+}
+
+.ad-slot-inner:hover {
+  border-color: rgba(0, 245, 212, 0.35);
+  background: rgba(15, 23, 42, 0.65);
+}
+
+.ad-label {
+  position: absolute;
+  top: -9px;
+  right: 18px;
+  background: #0f172a;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 0 0.5rem;
+  font-size: 0.68rem;
+  color: var(--text-dim);
+  border-radius: 4px;
+  letter-spacing: 0.5px;
+}
+
+.ad-placeholder-content {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  color: var(--text-dim);
+  font-size: 0.88rem;
+}
+
+.ad-placeholder-content span.icon {
+  font-size: 1.3rem;
+  opacity: 0.7;
+}
+
+/* ==========================================================================
+   Hero Section
+   ========================================================================== */
+.hero-section {
+  text-align: center;
+  padding: 2.75rem 1rem 1.5rem;
+  position: relative;
+}
+
+.hero-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.4rem 1.2rem;
+  background: linear-gradient(90deg, rgba(168, 85, 247, 0.2), rgba(0, 245, 212, 0.2));
+  border: 1px solid rgba(0, 245, 212, 0.35);
+  border-radius: 50px;
+  font-size: 0.88rem;
+  color: #fff;
+  margin-bottom: 1.25rem;
+  box-shadow: 0 0 25px rgba(0, 245, 212, 0.25);
+  backdrop-filter: blur(10px);
+}
+
+.hero-title {
+  font-size: clamp(2.1rem, 4.5vw, 3.5rem);
+  font-weight: 900;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+
+.glow-cyan {
+  color: var(--accent-cyan);
+  text-shadow: 0 0 25px var(--accent-cyan-glow), 0 0 50px rgba(0, 245, 212, 0.2);
+}
+
+.glow-purple {
+  color: #c084fc;
+  text-shadow: 0 0 25px var(--accent-purple-glow), 0 0 50px rgba(168, 85, 247, 0.2);
+}
+
+.glow-gold {
+  color: var(--accent-gold);
+  text-shadow: 0 0 25px var(--accent-gold-glow);
+}
+
+.hero-desc {
+  max-width: 680px;
+  margin: 0 auto 1.5rem;
+  color: var(--text-muted);
+  font-size: 1.15rem;
+}
+
+/* ==========================================================================
+   Generator Box (High-End Neon Glass Container)
+   ========================================================================== */
+.generator-box {
+  background: var(--bg-card);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius-lg);
+  padding: 2rem;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6), 0 0 30px rgba(168, 85, 247, 0.12);
+  margin-bottom: 2rem;
+  position: relative;
+  transition: var(--transition);
+}
+
+/* Animated Neon Edge on Focus */
+.generator-box::after {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  border-radius: var(--radius-lg);
+  padding: 1px;
+  background: linear-gradient(135deg, rgba(0, 245, 212, 0.6), rgba(168, 85, 247, 0.6), rgba(255, 209, 102, 0.6));
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+  opacity: 0.4;
+  transition: opacity 0.3s ease;
+}
+
+.generator-box:focus-within::after {
+  opacity: 1;
+}
+
+.generator-box:focus-within {
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.7), 0 0 40px var(--accent-cyan-glow);
+}
+
+.input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.name-input {
+  width: 100%;
+  padding: 1.25rem 1.5rem 1.25rem 4.5rem;
+  font-size: 1.45rem;
+  font-family: inherit;
+  font-weight: 800;
+  background: rgba(8, 13, 24, 0.85);
+  border: 2px solid rgba(255, 255, 255, 0.09);
+  border-radius: var(--radius-md);
+  color: #fff;
+  outline: none;
+  transition: var(--transition);
+  box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.4);
+}
+
+.name-input:focus {
+  border-color: var(--accent-cyan);
+  background: rgba(8, 13, 24, 0.98);
+  box-shadow: 0 0 20px var(--accent-cyan-glow), inset 0 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+.clear-btn {
+  position: absolute;
+  left: 1.15rem;
+  background: rgba(255, 255, 255, 0.08);
+  border: none;
+  color: var(--text-muted);
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.clear-btn:hover {
+  background: rgba(255, 51, 102, 0.35);
+  color: #fff;
+  transform: rotate(90deg);
+}
+
+/* Meta Bar (Limit Badges & Random Button) */
+.input-meta-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 1.25rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+.meta-badges {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  flex-wrap: wrap;
+}
+
+.char-counter {
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  background: rgba(255, 255, 255, 0.06);
+  padding: 0.35rem 0.85rem;
+  border-radius: 50px;
+  font-weight: 700;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.limit-badge {
+  font-size: 0.82rem;
+  padding: 0.35rem 0.8rem;
+  border-radius: 50px;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+}
+
+.limit-badge.neutral {
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--text-dim);
+}
+
+.limit-badge.success {
+  background: rgba(16, 185, 129, 0.15);
+  color: #34d399;
+  border: 1px solid rgba(16, 185, 129, 0.35);
+  box-shadow: 0 0 10px rgba(16, 185, 129, 0.2);
+}
+
+.limit-badge.warning {
+  background: rgba(245, 158, 11, 0.15);
+  color: #fbbf24;
+  border: 1px solid rgba(245, 158, 11, 0.35);
+  box-shadow: 0 0 10px rgba(245, 158, 11, 0.2);
+}
+
+.btn-secondary {
+  background: linear-gradient(135deg, rgba(168, 85, 247, 0.25), rgba(0, 245, 212, 0.25));
+  border: 1px solid rgba(0, 245, 212, 0.45);
+  color: #fff;
+  padding: 0.65rem 1.35rem;
+  border-radius: var(--radius-sm);
+  font-family: inherit;
+  font-weight: 800;
+  font-size: 0.95rem;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  transition: var(--transition);
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-secondary:hover {
+  background: linear-gradient(135deg, rgba(168, 85, 247, 0.5), rgba(0, 245, 212, 0.5));
+  box-shadow: 0 0 20px var(--accent-cyan-glow);
+  transform: translateY(-2px);
+}
+
+/* Quick Tools Strip (Invisible Space) */
+.quick-tools-strip {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+  background: linear-gradient(135deg, rgba(0, 245, 212, 0.06), rgba(168, 85, 247, 0.08));
+  border: 1px solid rgba(0, 245, 212, 0.3);
+  border-radius: var(--radius-md);
+  padding: 1rem 1.5rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+.quick-tool-info {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+}
+
+.quick-tool-info strong {
+  color: var(--accent-cyan);
+  font-size: 1.05rem;
+}
+
+.quick-tool-info p {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+.btn-tool {
+  background: linear-gradient(135deg, var(--accent-cyan), #00c9a7);
+  color: #050811;
+  border: none;
+  font-weight: 900;
+  font-family: inherit;
+  padding: 0.65rem 1.4rem;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  font-size: 0.95rem;
+  box-shadow: 0 0 20px var(--accent-cyan-glow);
+  transition: var(--transition);
+}
+
+.btn-tool:hover {
+  transform: translateY(-2px) scale(1.03);
+  box-shadow: 0 0 30px var(--accent-cyan-glow);
+}
+
+/* ==========================================================================
+   Filter Tabs
+   ========================================================================== */
+.tabs-container {
+  display: flex;
+  gap: 0.65rem;
+  overflow-x: auto;
+  padding-bottom: 0.85rem;
+  margin-bottom: 2rem;
+}
+
+.filter-tab {
+  background: rgba(15, 23, 42, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  color: var(--text-muted);
+  padding: 0.7rem 1.35rem;
+  border-radius: 50px;
+  font-family: inherit;
+  font-weight: 800;
+  font-size: 0.94rem;
+  cursor: pointer;
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: var(--transition);
+  backdrop-filter: blur(10px);
+}
+
+.filter-tab:hover {
+  background: rgba(30, 41, 59, 1);
+  color: #fff;
+  border-color: rgba(0, 245, 212, 0.4);
+  transform: translateY(-2px);
+}
+
+.filter-tab.active {
+  background: linear-gradient(135deg, #a855f7, #6366f1);
+  color: #fff;
+  border-color: #a855f7;
+  box-shadow: 0 0 20px var(--accent-purple-glow);
+}
+
+/* ==========================================================================
+   Results Grid & Cards (Ultra VIP 3D Effect)
+   ========================================================================== */
+.results-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 3.5rem;
+}
+
+.name-card {
+  background: var(--bg-card);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--border-glass);
+  border-radius: var(--radius-md);
+  padding: 1.35rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: var(--transition);
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+  animation: fadeIn 0.35s ease-out forwards;
+}
+
+/* Subtle Shimmer highlight line on top */
+.name-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--accent-cyan), var(--accent-purple), transparent);
+  opacity: 0.6;
+  transition: var(--transition);
+}
+
+.name-card:hover {
+  background: var(--bg-card-hover);
+  border-color: var(--border-neon-cyan);
+  transform: translateY(-6px);
+  box-shadow: 0 18px 35px rgba(0, 0, 0, 0.5), 0 0 25px rgba(0, 245, 212, 0.25);
+}
+
+.name-card:hover::before {
+  opacity: 1;
+  height: 3px;
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.badge {
+  font-size: 0.72rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  padding: 0.3rem 0.65rem;
+  border-radius: 6px;
+  background: rgba(168, 85, 247, 0.2);
+  color: #d8b4fe;
+  border: 1px solid rgba(168, 85, 247, 0.35);
+  letter-spacing: 0.5px;
+}
+
+.card-style-title {
+  font-size: 0.82rem;
+  color: var(--text-dim);
+  font-weight: 600;
+}
+
+.card-body {
+  margin: 0.85rem 0 1.35rem;
+  text-align: center;
+  min-height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.decorated-name-text {
+  font-size: 1.45rem;
+  font-weight: 800;
+  color: #ffffff;
+  letter-spacing: 1px;
+  word-break: break-word;
+  user-select: all;
+  text-shadow: 0 2px 10px rgba(0,0,0,0.7);
+  transition: var(--transition);
+}
+
+.name-card:hover .decorated-name-text {
+  color: var(--accent-cyan-bright);
+  text-shadow: 0 0 15px var(--accent-cyan-glow);
+}
+
+.card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 0.85rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.name-length {
+  font-size: 0.8rem;
+  color: var(--text-dim);
+}
+
+.card-actions {
+  display: flex;
+  gap: 0.6rem;
+}
+
+.fav-btn {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: var(--text-dim);
+  width: 38px;
+  height: 38px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.15rem;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.fav-btn:hover {
+  color: var(--accent-gold);
+  border-color: var(--accent-gold);
+  transform: scale(1.1);
+}
+
+.fav-btn.active {
+  color: #ffd700;
+  border-color: #ffd700;
+  background: rgba(255, 215, 0, 0.2);
+  box-shadow: 0 0 15px rgba(255, 215, 0, 0.4);
+}
+
+.copy-btn {
+  background: linear-gradient(135deg, rgba(0, 245, 212, 0.18), rgba(168, 85, 247, 0.2));
+  border: 1px solid rgba(0, 245, 212, 0.45);
+  color: var(--accent-cyan);
+  padding: 0.5rem 1.15rem;
+  border-radius: 8px;
+  font-family: inherit;
+  font-weight: 800;
+  font-size: 0.92rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  transition: var(--transition);
+}
+
+.copy-btn:hover {
+  background: var(--accent-cyan);
+  color: #060911;
+  box-shadow: 0 0 20px var(--accent-cyan-glow);
+  transform: translateY(-2px);
+}
+
+.copy-btn.copied {
+  background: var(--success);
+  border-color: var(--success);
+  color: #fff;
+  box-shadow: 0 0 20px rgba(16, 185, 129, 0.5);
+  transform: scale(1.05);
+}
+
+/* Empty State & No Results */
+.empty-state, .no-results {
+  text-align: center;
+  padding: 4.5rem 1.5rem;
+  background: var(--bg-card);
+  border: 1px dashed var(--border-glass);
+  border-radius: var(--radius-lg);
+  color: var(--text-muted);
+  grid-column: 1 / -1;
+  backdrop-filter: blur(12px);
+}
+
+.empty-state h3 {
+  color: #fff;
+  font-size: 1.5rem;
+  margin: 1.25rem 0 0.5rem;
+}
+
+/* ==========================================================================
+   Symbols Studio Section
+   ========================================================================== */
+.section-wrapper {
+  margin-bottom: 4rem;
+}
+
+.section-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.section-head h3 {
+  font-size: 1.6rem;
+  font-weight: 900;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.custom-select {
+  background: rgba(15, 23, 42, 0.9);
+  border: 1px solid rgba(0, 245, 212, 0.35);
+  color: #fff;
+  padding: 0.6rem 1.4rem;
+  border-radius: 8px;
+  font-family: inherit;
+  font-weight: 700;
+  outline: none;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.symbol-category-group {
+  margin-bottom: 2rem;
+}
+
+.symbol-cat-title {
+  font-size: 1.05rem;
+  color: var(--accent-gold);
+  margin-bottom: 0.85rem;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.symbols-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(75px, 1fr));
+  gap: 0.75rem;
+}
+
+.symbol-item {
+  background: var(--bg-card);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 10px;
+  color: #fff;
+  height: 56px;
+  font-size: 1.4rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition);
+  backdrop-filter: blur(8px);
+}
+
+.symbol-item:hover {
+  background: rgba(0, 245, 212, 0.2);
+  border-color: var(--accent-cyan);
+  color: var(--accent-cyan);
+  transform: translateY(-3px) scale(1.12);
+  box-shadow: 0 0 18px var(--accent-cyan-glow);
+}
+
+/* ==========================================================================
+   FAQ & Info Cards (SEO)
+   ========================================================================== */
+.faq-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.faq-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-glass);
+  border-radius: var(--radius-md);
+  padding: 1.75rem;
+  backdrop-filter: blur(12px);
+  transition: var(--transition);
+}
+
+.faq-card:hover {
+  border-color: rgba(168, 85, 247, 0.4);
+  transform: translateY(-4px);
+}
+
+.faq-card h4 {
+  font-size: 1.15rem;
+  color: var(--accent-cyan);
+  margin-bottom: 0.85rem;
+  font-weight: 800;
+}
+
+.faq-card p {
+  color: var(--text-muted);
+  font-size: 0.98rem;
+  line-height: 1.8;
+}
+
+/* ==========================================================================
+   Footer
+   ========================================================================== */
+footer.site-footer {
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 3rem 0;
+  text-align: center;
+  color: var(--text-dim);
+  font-size: 0.92rem;
+  margin-top: 5rem;
+  background: rgba(6, 9, 17, 0.7);
+}
+
+/* ==========================================================================
+   Toast Notification
+   ========================================================================== */
+.toast {
+  position: fixed;
+  bottom: 2.25rem;
+  left: 50%;
+  transform: translateX(-50%) translateY(120px);
+  background: rgba(11, 17, 32, 0.95);
+  border: 2px solid var(--accent-cyan);
+  color: #fff;
+  padding: 0.95rem 2rem;
+  border-radius: 50px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.7), 0 0 30px var(--accent-cyan-glow);
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  font-weight: 800;
+  font-size: 1rem;
+  z-index: 9999;
+  opacity: 0;
+  pointer-events: none;
+  backdrop-filter: blur(16px);
+  transition: all 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.toast.visible {
+  transform: translateX(-50%) translateY(0);
+  opacity: 1;
+}
+
+.toast-icon {
+  color: var(--accent-cyan);
+  font-size: 1.35rem;
+}
+
+/* Keyframes */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.pulse-glow {
+  animation: pulseGlow 0.5s ease-in-out;
+}
+
+@keyframes pulseGlow {
+  0% { box-shadow: 0 0 5px var(--accent-cyan); }
+  50% { box-shadow: 0 0 35px var(--accent-cyan); border-color: var(--accent-cyan); }
+  100% { box-shadow: none; }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hero-section {
+    padding: 2rem 0.5rem 1.25rem;
+  }
+  .generator-box {
+    padding: 1.35rem;
+  }
+  .name-input {
+    font-size: 1.2rem;
+    padding: 1rem 1rem 1rem 3.5rem;
+  }
+  .results-grid {
+    grid-template-columns: 1fr;
+  }
+  .input-meta-bar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .btn-secondary {
+    justify-content: center;
+  }
+}
+
+</style>
 </head>
 <body>
 
@@ -245,8 +1266,1049 @@
   </div>
 
   <!-- Scripts -->
-  <script src="js/symbols.js"></script>
-  <script src="js/decorations.js"></script>
-  <script src="js/app.js"></script>
+  <script>
+/**
+ * Gaming Symbols Database
+ * A curated collection of symbols widely supported across PUBG, Free Fire, COD, etc.
+ */
+
+const SYMBOLS_DATA = [
+  {
+    category: "أسلحة وسيوف (Weapons)",
+    id: "weapons",
+    symbols: [
+      "︻╦̵̵͇̿̿̿̿╤──", "▄︻̷̿┻̿═━一", "╾━╤デ╦︻", "︻デ═一", "⌐╦╦═─",
+      "⚔️", "⚔", "🗡️", "🏹", "🛡️", "☠️", "☠", "𖣘", "𖤍", "⚚"
+    ]
+  },
+  {
+    category: "أجنحة وإطارات أساطير (Wings & Frames)",
+    id: "wings",
+    symbols: [
+      "꧁", "꧂", "༺", "༻", "亗", "〆", "彡", "☬", "༒", "⫷", "⫸",
+      "『", "』", "【", "】", "〖", "〗", "《", "》", "〔", "〕",
+      "𓆩", "𓆪", "𓊈", "𓊉", "‹", "›", "«", "»", "⟨", "⟩"
+    ]
+  },
+  {
+    category: "تيجان وملوك (Crowns & VIP)",
+    id: "crowns",
+    symbols: [
+      "👑", "♔", "♕", "♚", "♛", "𓅓", "𓆩👑𓆪", "亗", "☬", "⚜️",
+      "⚜", "🏆", "🎖️", "🎗️", "🎩"
+    ]
+  },
+  {
+    category: "رموز يابانية وصينية (Asian & Kanji)",
+    id: "asian",
+    symbols: [
+      "气", "王", "父", "个", "乄", "乡", "々", "ゞ", "〄", "神",
+      "鬼", "龍", "死", "魔", "影", "虎", "狼", "忍", "侍", "月"
+    ]
+  },
+  {
+    category: "نجوم وبرق وطاقة (Stars & Lightning)",
+    id: "stars",
+    symbols: [
+      "★", "☆", "✦", "✧", "✪", "✯", "✰", "⚡", "☄", "☀️",
+      "🌙", "⭐", "💫", "✨", "🔥", "💥", "☢️", "☣️", "⚙️", "❂"
+    ]
+  },
+  {
+    category: "أرقام ورموز فخمة (Numbers & Aesthetics)",
+    id: "aesthetic",
+    symbols: [
+      "①", "②", "③", "④", "⑤", "⑥", "⑦", "⑧", "⑨", "⑩",
+      "❶", "❷", "❸", "❹", "❺", "❻", "❼", "❽", "❾", "❿",
+      "ⅰ", "ⅱ", "ⅲ", "ⅳ", "ⅴ", "ⅵ", "ⅶ", "ⅷ", "ⅸ", "ⅹ",
+      "Ⅰ", "Ⅱ", "Ⅲ", "Ⅳ", "Ⅴ", "Ⅵ", "Ⅶ", "Ⅷ", "Ⅸ", "Ⅹ"
+    ]
+  },
+  {
+    category: "قلوب وزهور ورموز خاصة (Hearts & Florals)",
+    id: "hearts",
+    symbols: [
+      "🖤", "🤍", "💔", "❤️‍🔥", "❦", "❧", "✿", "❀", "❁", "❃",
+      "✾", "✤", "✥", "✦", "✓", "✗", "∞", "☯", "", "☕"
+    ]
+  }
+];
+
+// Invisible space characters (Hangul Filler U+3164 is famous for Free Fire / PUBG)
+const INVISIBLE_SPACES = {
+  hangulFiller: "\u3164",       // Free Fire standard
+  zeroWidthSpace: "\u200B",     // Zero width space
+  zeroWidthNonJoiner: "\u200C", // ZWNJ
+  brailleBlank: "\u2800"        // Braille blank space
+};
+
+
+/**
+ * Gaming Nickname Decoration Engine
+ * Handles font mapping, Arabic embellishments, gaming borders/frames, and presets.
+ */
+
+// Mapping dictionaries for English Unicode fonts
+const FONT_MAPS = {
+  gothicBold: {
+    name: "قوطي عريض (Gothic Bold)",
+    map: {
+      'A': '𝕬', 'B': '𝕭', 'C': '𝕮', 'D': '𝕯', 'E': '𝕰', 'F': '𝕱', 'G': '𝕲', 'H': '𝕳', 'I': '𝕴',
+      'J': '𝕵', 'K': '𝕶', 'L': '𝕷', 'M': '𝕸', 'N': '𝕹', 'O': '𝕺', 'P': '𝕻', 'Q': '𝕼', 'R': '𝕽',
+      'S': '𝕾', 'T': '𝕿', 'U': '𝖀', 'V': '𝖁', 'W': '𝖂', 'X': '𝖃', 'Y': '𝖄', 'Z': '𝖅',
+      'a': '𝖆', 'b': '𝖇', 'c': '𝖈', 'd': '𝖉', 'e': '𝖊', 'f': '𝖋', 'g': '𝖌', 'h': '𝖍', 'i': '𝖎',
+      'j': '𝖏', 'k': '𝖐', 'l': '𝖑', 'm': '𝖒', 'n': '𝖓', 'o': '𝖔', 'p': '𝖕', 'q': '𝖖', 'r': '𝖗',
+      's': '𝖘', 't': '𝖙', 'u': '𝖚', 'v': '𝖛', 'w': '𝖜', 'x': '𝖝', 'y': '𝖞', 'z': '𝖟',
+      '0': '𝟘', '1': '𝟙', '2': '𝟚', '3': '𝟛', '4': '𝟜', '5': '𝟝', '6': '𝟞', '7': '𝟟', '8': '𝟠', '9': '𝟡'
+    }
+  },
+  cursiveBold: {
+    name: "رسمي ملكي (Cursive VIP)",
+    map: {
+      'A': '𝓐', 'B': '𝓑', 'C': '𝓒', 'D': '𝓓', 'E': '𝓔', 'F': '𝓕', 'G': '𝓖', 'H': '𝓗', 'I': '𝓘',
+      'J': '𝓙', 'K': '𝓚', 'L': '𝓛', 'M': '𝓜', 'N': '𝓝', 'O': '𝓞', 'P': '𝓟', 'Q': '𝓠', 'R': '𝓡',
+      'S': '𝓢', 'T': '𝓣', 'U': '𝓤', 'V': '𝓥', 'W': '𝓦', 'X': '𝓧', 'Y': '𝓨', 'Z': '𝓩',
+      'a': '𝓪', 'b': '𝓫', 'c': '𝓬', 'd': '𝓭', 'e': '𝓮', 'f': '𝓯', 'g': '𝓰', 'h': '𝓱', 'i': '𝓲',
+      'j': '𝓳', 'k': '𝓴', 'l': '𝓵', 'm': '𝓶', 'n': '𝓷', 'o': '𝓸', 'p': '𝓹', 'q': '𝓺', 'r': '𝓻',
+      's': '𝓼', 't': '𝓽', 'u': '𝓾', 'v': '𝓿', 'w': '𝔀', 'x': '𝔁', 'y': '𝔂', 'z': '𝔃'
+    }
+  },
+  doubleStruck: {
+    name: "مزدوج مجوف (Double-Struck)",
+    map: {
+      'A': '𝔸', 'B': '𝔹', 'C': 'ℂ', 'D': '𝔻', 'E': '𝔼', 'F': '𝔽', 'G': '𝔾', 'H': 'ℍ', 'I': '𝕀',
+      'J': '𝕁', 'K': '𝕂', 'L': '𝕃', 'M': '𝕄', 'N': 'ℕ', 'O': '𝕆', 'P': 'ℙ', 'Q': 'ℚ', 'R': 'ℝ',
+      'S': '𝕊', 'T': '𝕋', 'U': '𝕌', 'V': '𝕍', 'W': '𝕎', 'X': '𝕏', 'Y': '𝕐', 'Z': 'ℤ',
+      'a': '𝕒', 'b': '𝕓', 'c': '𝕔', 'd': '𝕕', 'e': '𝕖', 'f': '𝕗', 'g': '𝕘', 'h': '𝕙', 'i': '𝕚',
+      'j': '𝕛', 'k': '𝕜', 'l': '𝕝', 'm': '𝕞', 'n': '𝕟', 'o': '𝕠', 'p': '𝕡', 'q': '𝕢', 'r': '𝕣',
+      's': '𝕤', 't': '𝕥', 'u': '𝕦', 'v': '𝕧', 'w': '𝕨', 'x': '𝕩', 'y': '𝕪', 'z': '𝕫',
+      '0': '𝟘', '1': '𝟙', '2': '𝟚', '3': '𝟛', '4': '𝟜', '5': '𝟝', '6': '𝟞', '7': '𝟟', '8': '𝟠', '9': '𝟡'
+    }
+  },
+  boldSans: {
+    name: "عريض حديث (Bold Gaming)",
+    map: {
+      'A': '𝗔', 'B': '𝗕', 'C': '𝗖', 'D': '𝗗', 'E': '𝗘', 'F': '𝗙', 'G': '𝗚', 'H': '𝗛', 'I': '𝗜',
+      'J': '𝗝', 'K': '𝗞', 'L': '𝗟', 'M': '𝗠', 'N': '𝗡', 'O': '𝗢', 'P': '𝗣', 'Q': '𝗤', 'R': '𝗥',
+      'S': '𝗦', 'T': '𝗧', 'U': '𝗨', 'V': '𝗩', 'W': '𝗪', 'X': '𝗫', 'Y': '𝗬', 'Z': '𝗭',
+      'a': '𝗮', 'b': '𝗯', 'c': '𝗰', 'd': '𝗱', 'e': '𝗲', 'f': '𝗳', 'g': '𝗴', 'h': '𝗵', 'i': '𝗶',
+      'j': '𝗷', 'k': '𝗸', 'l': '𝗹', 'm': '𝗺', 'n': '𝗻', 'o': '𝗼', 'p': '𝗽', 'q': '𝗾', 'r': '𝗿',
+      's': '𝘀', 't': '𝘁', 'u': '𝘂', 'v': '𝘃', 'w': '𝘄', 'x': '𝘅', 'y': '𝘆', 'z': '𝘇',
+      '0': '𝟬', '1': '𝟭', '2': '𝟮', '3': '𝟯', '4': '𝟰', '5': '𝟱', '6': '𝟲', '7': '𝟳', '8': '𝟴', '9': '𝟵'
+    }
+  },
+  smallCaps: {
+    name: "حروف كابتل مصغرة (Small Caps)",
+    map: {
+      'a': 'ᴀ', 'b': 'ʙ', 'c': 'ᴄ', 'd': 'ᴅ', 'e': 'ᴇ', 'f': 'ꜰ', 'g': 'ɢ', 'h': 'ʜ', 'i': 'ɪ',
+      'j': 'ᴊ', 'k': 'ᴋ', 'l': 'ʟ', 'm': 'ᴍ', 'n': 'ɴ', 'o': 'ᴏ', 'p': 'ᴘ', 'q': 'ǫ', 'r': 'ʀ',
+      's': 's', 't': 'ᴛ', 'u': 'ᴜ', 'v': 'ᴠ', 'w': 'ᴡ', 'x': 'x', 'y': 'ʏ', 'z': 'ᴢ',
+      'A': 'ᴀ', 'B': 'ʙ', 'C': 'ᴄ', 'D': 'ᴅ', 'E': 'ᴇ', 'F': 'ꜰ', 'G': 'ɢ', 'H': 'ʜ', 'I': 'ɪ',
+      'J': 'ᴊ', 'K': 'ᴋ', 'L': 'ʟ', 'M': 'ᴍ', 'N': 'ɴ', 'O': 'ᴏ', 'P': 'ᴘ', 'Q': 'ǫ', 'R': 'ʀ',
+      'S': 's', 'T': 'ᴛ', 'U': 'ᴜ', 'V': 'ᴠ', 'W': 'ᴡ', 'X': 'x', 'Y': 'ʏ', 'Z': 'ᴢ'
+    }
+  },
+  bubble: {
+    name: "دوائر وفقاعات (Circled)",
+    map: {
+      'A': 'Ⓐ', 'B': 'Ⓑ', 'C': 'Ⓒ', 'D': 'Ⓓ', 'E': 'Ⓔ', 'F': 'Ⓕ', 'G': 'Ⓖ', 'H': 'Ⓗ', 'I': 'Ⓘ',
+      'J': 'Ⓙ', 'K': 'Ⓚ', 'L': 'Ⓛ', 'M': 'Ⓜ', 'N': 'Ⓝ', 'O': 'Ⓞ', 'P': 'Ⓟ', 'Q': 'Ⓠ', 'R': 'Ⓡ',
+      'S': 'Ⓢ', 'T': 'Ⓣ', 'U': 'Ⓤ', 'V': 'Ⓥ', 'W': 'Ⓦ', 'X': 'Ⓧ', 'Y': 'Ⓨ', 'Z': 'Ⓩ',
+      'a': 'ⓐ', 'b': 'ⓑ', 'c': 'ⓒ', 'd': 'ⓓ', 'e': 'ⓔ', 'f': 'ⓕ', 'g': 'ⓖ', 'h': 'ⓗ', 'i': 'ⓘ',
+      'j': 'ⓙ', 'k': 'ⓚ', 'l': 'ⓛ', 'm': 'ⓜ', 'n': 'ⓝ', 'o': 'ⓞ', 'p': 'ⓟ', 'q': 'ⓠ', 'r': 'ⓡ',
+      's': 'ⓢ', 't': 'ⓣ', 'u': 'ⓤ', 'v': 'ⓥ', 'w': 'ⓦ', 'x': 'ⓧ', 'y': 'ⓨ', 'z': 'ⓩ',
+      '0': '⓪', '1': '①', '2': '②', '3': '③', '4': '④', '5': '⑤', '6': '⑥', '7': '⑦', '8': '⑧', '9': '⑨'
+    }
+  },
+  vaporwave: {
+    name: "متباعد عريض (Wide / Aesthetic)",
+    map: {
+      'A': 'Ａ', 'B': 'Ｂ', 'C': 'Ｃ', 'D': 'Ｄ', 'E': 'Ｅ', 'F': 'Ｆ', 'G': 'Ｇ', 'H': 'Ｈ', 'I': 'Ｉ',
+      'J': 'Ｊ', 'K': 'Ｋ', 'L': 'Ｌ', 'M': 'Ｍ', 'N': 'Ｎ', 'O': 'Ｏ', 'P': 'Ｐ', 'Q': 'Ｑ', 'R': 'Ｒ',
+      'S': 'Ｓ', 'T': 'Ｔ', 'U': 'Ｕ', 'V': 'Ｖ', 'W': 'Ｗ', 'X': 'Ｘ', 'Y': 'Ｙ', 'Z': 'Ｚ',
+      'a': 'ａ', 'b': 'ｂ', 'c': 'ｃ', 'd': 'ｄ', 'e': 'ｅ', 'f': 'ｆ', 'g': 'ｇ', 'h': 'ｈ', 'i': 'ｉ',
+      'j': 'ｊ', 'k': 'ｋ', 'l': 'ｌ', 'm': 'ｍ', 'n': 'ｎ', 'o': 'ｏ', 'p': 'ｐ', 'q': 'ｑ', 'r': 'ｒ',
+      's': 'ｓ', 't': 'ｔ', 'u': 'ｕ', 'v': 'ｖ', 'w': 'ｗ', 'x': 'ｘ', 'y': 'ｙ', 'z': 'ｚ',
+      '0': '０', '1': '１', '2': '２', '3': '３', '4': '４', '5': '５', '6': '６', '7': '７', '8': '８', '9': '９'
+    }
+  },
+  monospace: {
+    name: "آلة كاتبة (Monospace)",
+    map: {
+      'A': '𝙰', 'B': '𝙱', 'C': '𝙲', 'D': '𝙳', 'E': '𝙴', 'F': '𝙵', 'G': '𝙶', 'H': '𝙷', 'I': '𝙸',
+      'J': '𝙹', 'K': '𝙺', 'L': '𝙻', 'M': '𝙼', 'N': '𝙽', 'O': '𝙾', 'P': '𝙿', 'Q': '𝚀', 'R': '𝚁',
+      'S': '𝚂', 'T': '𝚃', 'U': '𝚄', 'V': '𝚅', 'W': '𝚆', 'X': '𝚇', 'Y': '𝚈', 'Z': '𝚉',
+      'a': '𝚊', 'b': '𝚋', 'c': '𝚌', 'd': '𝚍', 'e': '𝚎', 'f': '𝚏', 'g': '𝚐', 'h': '𝚑', 'i': '𝚒',
+      'j': '𝚓', 'k': '𝚔', 'l': '𝚕', 'm': '𝚖', 'n': '𝚗', 'o': '𝚘', 'p': '𝚙', 'q': '𝚚', 'r': '𝚛',
+      's': '𝚜', 't': '𝚝', 'u': '𝚞', 'v': '𝚟', 'w': '𝚠', 'x': '𝚡', 'y': '𝚢', 'z': '𝚣'
+    }
+  }
+};
+
+// Transform English characters through a given map
+function applyFontMap(text, mapKey) {
+  const font = FONT_MAPS[mapKey];
+  if (!font) return text;
+  return text.split('').map(char => font.map[char] || char).join('');
+}
+
+// Arabic Character Decorations and Variations
+const ARABIC_DECORATORS = [
+  {
+    name: "تشكيل فخم مع حركات",
+    apply: (text) => {
+      const marks = ['َ', 'ُ', 'ِ', 'ّ', 'ْ', 'ً', 'ٌ', 'ٍ', 'ٰ'];
+      return text.split('').map((char, i) => {
+        if (/[\u0600-\u06FF]/.test(char) && char !== ' ') {
+          return char + marks[i % marks.length];
+        }
+        return char;
+      }).join('');
+    }
+  },
+  {
+    name: "تطويل ومدات الحروف (كـ ـشـ ـخـ ـة)",
+    apply: (text) => {
+      return text.split('').map(char => {
+        if (/[\u0600-\u06FF]/.test(char) && char !== ' ') {
+          return char + 'ـ';
+        }
+        return char;
+      }).join('');
+    }
+  },
+  {
+    name: "تباعد فخم متناسق",
+    apply: (text) => {
+      return text.split('').join(' ');
+    }
+  },
+  {
+    name: "استبدال حروف نادرة (فولكنو)",
+    apply: (text) => {
+      const rep = {
+        'ا': 'ﺂ', 'أ': 'ٲ', 'إ': 'إ', 'ل': 'لہ', 'ي': 'يِ', 'ى': 'ێ', 'ه': 'ھ',
+        'م': 'مـہ', 'ن': 'نـہ', 'ت': 'تـہ', 'ك': 'ڪ', 'و': 'وُ', 'ر': 'رّ'
+      };
+      return text.split('').map(c => rep[c] || c).join('');
+    }
+  },
+  {
+    name: "نقوش وزخرفة سفلية",
+    apply: (text) => {
+      return text.split('').map(char => {
+        if (/[\u0600-\u06FF]/.test(char) && char !== ' ') {
+          return char + 'ـہ';
+        }
+        return char;
+      }).join('');
+    }
+  },
+  {
+    name: "مزيج حروف كردية ومغاربية فخمة",
+    apply: (text) => {
+      const kurd = {
+        'ك': 'ڬ', 'ف': 'ڥ', 'ب': 'پ', 'ج': 'چ', 'ز': 'ژ', 'ق': 'ڨ'
+      };
+      return text.split('').map(c => kurd[c] || c).join('');
+    }
+  }
+];
+
+// Gaming Wrappers and Badges (Borders, Wings, Signs)
+const GAMING_FRAMES = [
+  // PUBG Mobile Favorites
+  { prefix: "꧁༺ ", suffix: " ༻꧂", tag: "pubg", styleName: "أجنحة الأساطير" },
+  { prefix: "亗 『", suffix: "』 亗", tag: "pubg", styleName: "تاج الزعيم (亗)" },
+  { prefix: "〆", suffix: "〆", tag: "pubg", styleName: "شارة القناص (〆)" },
+  { prefix: "彡", suffix: "彡", tag: "pubg", styleName: "ريشة السرعة (彡)" },
+  { prefix: "☬", suffix: "☬", tag: "pubg", styleName: "رمز الغورو (☬)" },
+  { prefix: "༒", suffix: "༒", tag: "pubg", styleName: "مقدس الأساطير (༒)" },
+  { prefix: "『V凸P』", suffix: "", tag: "pubg", styleName: "علامة VIP الهجومية" },
+  { prefix: "王 ", suffix: " 王", tag: "pubg", styleName: "ملك الكانجي (王)" },
+  { prefix: "气 ", suffix: " 气", tag: "pubg", styleName: "طاقة التشي (气)" },
+  { prefix: "父 ", suffix: " 父", tag: "pubg", styleName: "الأب الروحي (父)" },
+  { prefix: "个 ", suffix: " 个", tag: "pubg", styleName: "المحارب المنفرد" },
+  { prefix: "乡 ", suffix: " 乡", tag: "pubg", styleName: "قبيلة الأبطال (乡)" },
+  { prefix: "★彡 ", suffix: " 彡★", tag: "pubg", styleName: "نجمة السرعة" },
+  { prefix: "︻╦╤─ ", suffix: " ─╤╦︻", tag: "pubg", styleName: "سلاح AWM المزدوج" },
+  { prefix: "꧁༒☬", suffix: "☬༒꧂", tag: "pubg", styleName: "إكليل الفراعنة" },
+
+  // Free Fire Favorites
+  { prefix: "×͜× ", suffix: "", tag: "freefire", styleName: "ابتسامة الجوكر (×͜×)" },
+  { prefix: "𓆩 ", suffix: " 𓆪", tag: "freefire", styleName: "أجنحة الصقر" },
+  { prefix: "OP ᭄ ", suffix: "", tag: "freefire", styleName: "بادئة القوة (OP)" },
+  { prefix: "✿ ᴍ ʀ ᭄ ", suffix: "", tag: "freefire", styleName: "مستر المحترف" },
+  { prefix: "⚡ ", suffix: " ⚡", tag: "freefire", styleName: "صاعقة الرعد" },
+  { prefix: " ", suffix: " ", tag: "freefire", styleName: "تفاحة آبل النادرة" },
+  { prefix: "⫷ ", suffix: " ⫸", tag: "freefire", styleName: "أقواس الوحش" },
+  { prefix: "『T͟X͟』", suffix: "", tag: "freefire", styleName: "عشيرة التاكسون" },
+  { prefix: "", suffix: " 亗", tag: "freefire", styleName: "ختم الزعامة" },
+  { prefix: "🖤 ", suffix: " 🖤", tag: "freefire", styleName: "القلب الأسود الغامض" },
+  { prefix: "ɪɴᴅ・", suffix: "", tag: "freefire", styleName: "شارة البطولات" },
+
+  // Luxury / VIP
+  { prefix: "👑 ", suffix: " 👑", tag: "luxury", styleName: "التاج الذهبي الملكي" },
+  { prefix: "𓆩👑𓆪 ", suffix: "", tag: "luxury", styleName: "تاج الصقر الإمبراطوري" },
+  { prefix: "⚜️ ", suffix: " ⚜️", tag: "luxury", styleName: "الزنبقة الفرنسية الملكية" },
+  { prefix: "『VIP』", suffix: "★", tag: "luxury", styleName: "كبار الشخصيات VIP" },
+  { prefix: "『MR』", suffix: "™", tag: "luxury", styleName: "لقب السيد الاحترافي" },
+  { prefix: "〖", suffix: "〗", tag: "luxury", styleName: "أقواس مذهبة" },
+
+  // Aggressive & Dark / Scary
+  { prefix: "☠️ ", suffix: " ☠️", tag: "dark", styleName: "شعار الجمجمة المرعبة" },
+  { prefix: "⚔️ ", suffix: " ⚔️", tag: "dark", styleName: "سيوف الانتقام" },
+  { prefix: "▄︻̷̿┻̿═━一 ", suffix: "", tag: "dark", styleName: "قناص الباريت" },
+  { prefix: "☣️ ", suffix: " ☣️", tag: "dark", styleName: "الخطر البيولوجي" },
+  { prefix: "『DEATH』", suffix: "", tag: "dark", styleName: "ملك الموت" },
+  { prefix: "🩸 ", suffix: " 🩸", tag: "dark", styleName: "دماء المعركة" }
+];
+
+// Random Gamer Names for quick inspiration
+const RANDOM_NAMES = {
+  ar: [
+    "الـصـقـر الـجـارح",
+    "شـبـح الـلـيـل",
+    "عـاصـفـة الـمـوت",
+    "الـذئـب الـمـنـفـرد",
+    "مـلـك الـسـاحـة",
+    "الـجـلاد",
+    "قـاهـر الـظـلام",
+    "سـيـف الـعـدالـة",
+    "بـركـان الـغـضـب",
+    "صـائـد الـرؤوس",
+    "الـكـوبـرا الـسـامـة",
+    "الـجـنـرال",
+    "إمـبـراطـور الـرعـب",
+    "الـمـحـارب الأخـيـر",
+    "الـقـائـد الـصـامـت",
+    "قـنـاص الـهـيـدشـوت",
+    "الـنـمـر الأسـود",
+    "وحـش الـبـطـولـة"
+  ],
+  en: [
+    "Shadow Hunter",
+    "Ghost Killer",
+    "Venom Sniper",
+    "Death King",
+    "Silent Assassin",
+    "Apex Predator",
+    "Cyber Ninja",
+    "Doom Slayer",
+    "Savage Beast",
+    "Frost Bite",
+    "Thunder Storm",
+    "Iron Fist",
+    "Dark Lord",
+    "Headshot God",
+    "Night Stalker",
+    "Blood Thirsty",
+    "Toxic Player",
+    "Alpha Wolf"
+  ]
+};
+
+/**
+ * Generator function that takes input name and returns a rich list of decorated variants
+ */
+function generateDecorations(rawName) {
+  const name = rawName.trim();
+  if (!name) return [];
+
+  const results = [];
+  let id = 1;
+
+  const isArabic = /[\u0600-\u06FF]/.test(name);
+  const isEnglish = /[a-zA-Z]/.test(name);
+
+  // 1. English Font Variations (if contains English letters)
+  if (isEnglish) {
+    Object.keys(FONT_MAPS).forEach(mapKey => {
+      const font = FONT_MAPS[mapKey];
+      const converted = applyFontMap(name, mapKey);
+      results.push({
+        id: id++,
+        text: converted,
+        title: font.name,
+        tag: "english",
+        badge: "خط إنجليزي"
+      });
+
+      // Combine with popular frames
+      results.push({
+        id: id++,
+        text: `꧁༺ ${converted} ༻꧂`,
+        title: `${font.name} + أجنحة الأساطير`,
+        tag: "pubg",
+        badge: "ببجي / Free Fire"
+      });
+      results.push({
+        id: id++,
+        text: `亗 『${converted}』 亗`,
+        title: `${font.name} + تاج الزعامة`,
+        tag: "luxury",
+        badge: "فخمة"
+      });
+      results.push({
+        id: id++,
+        text: `×͜× ${converted}`,
+        title: `${font.name} + جوكر`,
+        tag: "freefire",
+        badge: "فري فاير"
+      });
+    });
+  }
+
+  // 2. Arabic Decorated Variations (if contains Arabic)
+  if (isArabic) {
+    ARABIC_DECORATORS.forEach(dec => {
+      const decorated = dec.apply(name);
+      results.push({
+        id: id++,
+        text: decorated,
+        title: dec.name,
+        tag: "arabic",
+        badge: "عربي مزخرف"
+      });
+
+      // Combine with popular frames
+      results.push({
+        id: id++,
+        text: `꧁༺ ${decorated} ༻꧂`,
+        title: `${dec.name} + أجنحة`,
+        tag: "pubg",
+        badge: "ببجي"
+      });
+      results.push({
+        id: id++,
+        text: `亗 『${decorated}』 亗`,
+        title: `${dec.name} + تاج الزعيم`,
+        tag: "luxury",
+        badge: "ملكي"
+      });
+      results.push({
+        id: id++,
+        text: `𓆩 ${decorated} 𓆪`,
+        title: `${dec.name} + صقر`,
+        tag: "freefire",
+        badge: "فري فاير"
+      });
+    });
+  }
+
+  // 3. Gaming Frames for the Raw / Stylized Name
+  GAMING_FRAMES.forEach(frame => {
+    // If it's English, try gothic or bold version inside frame too
+    const styledInside = isEnglish ? applyFontMap(name, 'boldSans') : name;
+    results.push({
+      id: id++,
+      text: `${frame.prefix}${styledInside}${frame.suffix}`,
+      title: frame.styleName,
+      tag: frame.tag,
+      badge: frame.tag.toUpperCase()
+    });
+  });
+
+  // 4. Special Creative Hybrid Combinations
+  results.push(
+    {
+      id: id++,
+      text: `☬【${name}】☬`,
+      title: "قناع الإمبراطور المحصن",
+      tag: "pubg",
+      badge: "ببجي"
+    },
+    {
+      id: id++,
+      text: `★ᴾᴿᴼ★ ${name} ⚡`,
+      title: "شارة اللاعب المحترف Pro",
+      tag: "freefire",
+      badge: "فري فاير"
+    },
+    {
+      id: id++,
+      text: `▄︻̷̿┻̿═━一 ${name} ☠️`,
+      title: "قناص الموت السريع",
+      tag: "dark",
+      badge: "مرعبة"
+    },
+    {
+      id: id++,
+      text: `『LeGeNd』${name}`,
+      title: "أسطورة البطولات",
+      tag: "luxury",
+      badge: "VIP"
+    },
+    {
+      id: id++,
+      text: ` ${name} `,
+      title: "تفاحة أبل الفخمة",
+      tag: "luxury",
+      badge: "نادرة"
+    },
+    {
+      id: id++,
+      text: `༒『${name}』༒`,
+      title: "محارب النخبة الأسطوري",
+      tag: "pubg",
+      badge: "ببجي"
+    },
+    {
+      id: id++,
+      text: `×͜× ${name} 亗`,
+      title: "جوكر الزعامة المزدوج",
+      tag: "freefire",
+      badge: "فري فاير"
+    },
+    {
+      id: id++,
+      text: `⚔️〖${name}〗⚔️`,
+      title: "فرسان المعركة",
+      tag: "dark",
+      badge: "قتالية"
+    },
+    {
+      id: id++,
+      text: `👑『${name}』👑`,
+      title: "الملك المتوج VIP",
+      tag: "luxury",
+      badge: "VIP"
+    },
+    {
+      id: id++,
+      text: `★彡[ ${name} ]彡★`,
+      title: "نجم الفيكتوري",
+      tag: "pubg",
+      badge: "ببجي"
+    }
+  );
+
+  return results;
+}
+
+
+/**
+ * Gaming Nickname Decorator - Main Application Logic
+ */
+
+// Application State
+const state = {
+  currentInput: "محارب",
+  activeTab: "all",
+  favorites: JSON.parse(localStorage.getItem("gaming_favorites") || "[]"),
+  soundEnabled: true
+};
+
+// Subtle Web Audio Synth for Gamer sound effects (no external MP3 needed!)
+const audioCtx = (typeof AudioContext !== 'undefined' || typeof webkitAudioContext !== 'undefined')
+  ? new (window.AudioContext || window.webkitAudioContext)()
+  : null;
+
+function playSound(type = 'click') {
+  if (!state.soundEnabled || !audioCtx) return;
+  try {
+    if (audioCtx.state === 'suspended') {
+      audioCtx.resume();
+    }
+    const osc = audioCtx.createOscillator();
+    const gain = audioCtx.createGain();
+    osc.connect(gain);
+    gain.connect(audioCtx.destination);
+
+    const now = audioCtx.currentTime;
+    if (type === 'click') {
+      osc.type = 'sine';
+      osc.frequency.setValueAtTime(520, now);
+      osc.frequency.exponentialRampToValueAtTime(780, now + 0.08);
+      gain.gain.setValueAtTime(0.12, now);
+      gain.gain.linearRampToValueAtTime(0.01, now + 0.08);
+      osc.start(now);
+      osc.stop(now + 0.08);
+    } else if (type === 'copy') {
+      // Victory/Laser beep
+      osc.type = 'triangle';
+      osc.frequency.setValueAtTime(440, now);
+      osc.frequency.exponentialRampToValueAtTime(880, now + 0.14);
+      gain.gain.setValueAtTime(0.15, now);
+      gain.gain.linearRampToValueAtTime(0.01, now + 0.14);
+      osc.start(now);
+      osc.stop(now + 0.14);
+    }
+  } catch (e) {
+    // Ignore audio permission or browser block
+  }
+}
+
+// DOM Elements
+let elements = {};
+
+function initElements() {
+  elements = {
+    nameInput: document.getElementById("nameInput"),
+    clearBtn: document.getElementById("clearBtn"),
+    randomBtn: document.getElementById("randomBtn"),
+    charCount: document.getElementById("charCount"),
+    pubgLimitBadge: document.getElementById("pubgLimitBadge"),
+    ffLimitBadge: document.getElementById("ffLimitBadge"),
+    resultsGrid: document.getElementById("resultsGrid"),
+    emptyState: document.getElementById("emptyState"),
+    tabs: document.querySelectorAll(".filter-tab"),
+    copyInvisibleBtn: document.getElementById("copyInvisibleBtn"),
+    symbolsContainer: document.getElementById("symbolsContainer"),
+    symbolsCategorySelect: document.getElementById("symbolsCategorySelect"),
+    toast: document.getElementById("toast"),
+    toastMessage: document.getElementById("toastMessage"),
+    soundToggle: document.getElementById("soundToggle")
+  };
+}
+
+// Initialize App
+document.addEventListener("DOMContentLoaded", () => {
+  initElements();
+  initEventListeners();
+  initAmbientCanvas();
+  renderSymbols();
+  updateResults();
+});
+
+// Ambient Cyber Particles Animation Engine
+function initAmbientCanvas() {
+  const canvas = document.getElementById("ambientCanvas");
+  if (!canvas) return;
+  const ctx = canvas.getContext("2d");
+  if (!ctx) return;
+
+  let width = (canvas.width = window.innerWidth);
+  let height = (canvas.height = window.innerHeight);
+
+  window.addEventListener("resize", () => {
+    width = canvas.width = window.innerWidth;
+    height = canvas.height = window.innerHeight;
+  });
+
+  const particleCount = Math.min(Math.floor(width / 32), 55);
+  const colors = ["#00f5d4", "#a855f7", "#ffd166", "#3b82f6"];
+
+  class Particle {
+    constructor() {
+      this.reset();
+    }
+    reset() {
+      this.x = Math.random() * width;
+      this.y = Math.random() * height;
+      this.vx = (Math.random() - 0.5) * 0.6;
+      this.vy = (Math.random() - 0.5) * 0.6;
+      this.radius = Math.random() * 2 + 1;
+      this.color = colors[Math.floor(Math.random() * colors.length)];
+      this.alpha = Math.random() * 0.6 + 0.2;
+    }
+    update() {
+      this.x += this.vx;
+      this.y += this.vy;
+      if (this.x < 0) this.x = width;
+      if (this.x > width) this.x = 0;
+      if (this.y < 0) this.y = height;
+      if (this.y > height) this.y = 0;
+    }
+    draw() {
+      ctx.beginPath();
+      ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+      ctx.fillStyle = this.color;
+      ctx.globalAlpha = this.alpha;
+      ctx.shadowBlur = 8;
+      ctx.shadowColor = this.color;
+      ctx.fill();
+    }
+  }
+
+  const particles = Array.from({ length: particleCount }, () => new Particle());
+
+  function animate() {
+    ctx.clearRect(0, 0, width, height);
+
+    // Draw connecting lines
+    for (let i = 0; i < particles.length; i++) {
+      for (let j = i + 1; j < particles.length; j++) {
+        const dx = particles[i].x - particles[j].x;
+        const dy = particles[i].y - particles[j].y;
+        const dist = Math.sqrt(dx * dx + dy * dy);
+
+        if (dist < 110) {
+          ctx.beginPath();
+          ctx.moveTo(particles[i].x, particles[i].y);
+          ctx.lineTo(particles[j].x, particles[j].y);
+          ctx.strokeStyle = "rgba(0, 245, 212, 0.15)";
+          ctx.globalAlpha = (1 - dist / 110) * 0.25;
+          ctx.lineWidth = 0.8;
+          ctx.stroke();
+        }
+      }
+    }
+
+    // Update and draw particles
+    particles.forEach(p => {
+      p.update();
+      p.draw();
+    });
+
+    requestAnimationFrame(animate);
+  }
+
+  animate();
+}
+
+// Event Listeners
+function initEventListeners() {
+  // Input changes
+  elements.nameInput.addEventListener("input", (e) => {
+    state.currentInput = e.target.value;
+    updateResults();
+  });
+
+  // Clear button
+  elements.clearBtn.addEventListener("click", () => {
+    elements.nameInput.value = "";
+    state.currentInput = "";
+    elements.nameInput.focus();
+    playSound('click');
+    updateResults();
+  });
+
+  // Random name generator
+  elements.randomBtn.addEventListener("click", () => {
+    playSound('click');
+    const pickLanguage = Math.random() > 0.5 ? 'ar' : 'en';
+    const list = RANDOM_NAMES[pickLanguage];
+    const picked = list[Math.floor(Math.random() * list.length)];
+    elements.nameInput.value = picked;
+    state.currentInput = picked;
+    
+    // Animate input briefly
+    elements.nameInput.classList.add("pulse-glow");
+    setTimeout(() => elements.nameInput.classList.remove("pulse-glow"), 500);
+
+    updateResults();
+  });
+
+  // Filter tabs
+  elements.tabs.forEach(tab => {
+    tab.addEventListener("click", () => {
+      elements.tabs.forEach(t => t.classList.remove("active"));
+      tab.classList.add("active");
+      state.activeTab = tab.dataset.tab;
+      playSound('click');
+      renderCurrentTab();
+    });
+  });
+
+  // Invisible Space Button
+  elements.copyInvisibleBtn.addEventListener("click", () => {
+    copyTextToClipboard(INVISIBLE_SPACES.hangulFiller, "تم نسخ المسافة المخفية (Hangul Filler) بنجاح!");
+  });
+
+  // Sound toggle button
+  if (elements.soundToggle) {
+    elements.soundToggle.addEventListener("click", () => {
+      state.soundEnabled = !state.soundEnabled;
+      elements.soundToggle.classList.toggle("muted", !state.soundEnabled);
+      elements.soundToggle.title = state.soundEnabled ? "كتم المؤثرات الصوتية" : "تشغيل المؤثرات الصوتية";
+      showToast(state.soundEnabled ? "🔊 تم تشغيل المؤثرات الصوتية" : "🔇 تم كتم الصوت");
+    });
+  }
+
+  // Symbols Category Select Change
+  if (elements.symbolsCategorySelect) {
+    elements.symbolsCategorySelect.addEventListener("change", (e) => {
+      renderSymbols(e.target.value);
+    });
+  }
+}
+
+// Update the generated results and limits
+function updateResults() {
+  const text = state.currentInput;
+  const len = text.length;
+
+  // Update counter
+  elements.charCount.textContent = `${len} حرف`;
+  
+  // Game limits indicators
+  if (elements.pubgLimitBadge) {
+    if (len === 0) {
+      elements.pubgLimitBadge.className = "limit-badge neutral";
+      elements.pubgLimitBadge.textContent = "ببجي (14)";
+    } else if (len <= 14) {
+      elements.pubgLimitBadge.className = "limit-badge success";
+      elements.pubgLimitBadge.textContent = "ببجي: متاح ✓";
+    } else {
+      elements.pubgLimitBadge.className = "limit-badge warning";
+      elements.pubgLimitBadge.textContent = "ببجي: طويل ⚠";
+    }
+  }
+
+  if (elements.ffLimitBadge) {
+    if (len === 0) {
+      elements.ffLimitBadge.className = "limit-badge neutral";
+      elements.ffLimitBadge.textContent = "فري فاير (12)";
+    } else if (len <= 12) {
+      elements.ffLimitBadge.className = "limit-badge success";
+      elements.ffLimitBadge.textContent = "فري فاير: متاح ✓";
+    } else {
+      elements.ffLimitBadge.className = "limit-badge warning";
+      elements.ffLimitBadge.textContent = "فري فاير: طويل ⚠";
+    }
+  }
+
+  renderCurrentTab();
+}
+
+// Filter and render list
+function renderCurrentTab() {
+  elements.resultsGrid.innerHTML = "";
+
+  if (state.activeTab === "favorites") {
+    renderFavorites();
+    return;
+  }
+
+  if (!state.currentInput.trim()) {
+    elements.emptyState.style.display = "block";
+    return;
+  }
+
+  elements.emptyState.style.display = "none";
+
+  const allDecorations = generateDecorations(state.currentInput);
+  
+  // Filter by active tab
+  let filtered = allDecorations;
+  if (state.activeTab !== "all") {
+    filtered = allDecorations.filter(item => item.tag === state.activeTab);
+  }
+
+  if (filtered.length === 0) {
+    elements.resultsGrid.innerHTML = `
+      <div class="no-results">
+        <p>لا توجد زخارف في هذا التصنيف لهذا النص. جرّب كتابة نص باللغة الإنجليزية أو العربية، أو اختر تصنيف "الكل".</p>
+      </div>
+    `;
+    return;
+  }
+
+  filtered.forEach((item, index) => {
+    const card = createCard(item.text, item.title, item.badge, index);
+    elements.resultsGrid.appendChild(card);
+  });
+}
+
+// Render user favorites
+function renderFavorites() {
+  if (state.favorites.length === 0) {
+    elements.resultsGrid.innerHTML = `
+      <div class="no-results">
+        <div style="font-size: 3rem; margin-bottom: 0.75rem;">⭐</div>
+        <p>لم تقم بإضافة أي اسم للمفضلة بعد.</p>
+        <p style="font-size: 0.9rem; color: #94a3b8; margin-top: 0.5rem;">انقر على أيقونة النجمة بجانب أي اسم مزخرف لحفظه هنا!</p>
+      </div>
+    `;
+    return;
+  }
+
+  state.favorites.forEach((text, index) => {
+    const card = createCard(text, "اسم محفوظ في المفضلة", "⭐ مفضلة", index, true);
+    elements.resultsGrid.appendChild(card);
+  });
+}
+
+// Card DOM Factory
+function createCard(text, title, badgeText, index, isFromFavorites = false) {
+  const card = document.createElement("div");
+  card.className = "name-card";
+  card.style.animationDelay = `${Math.min(index * 0.03, 0.4)}s`;
+
+  const isFav = state.favorites.includes(text);
+
+  card.innerHTML = `
+    <div class="card-header">
+      <span class="badge">${badgeText}</span>
+      <span class="card-style-title">${title}</span>
+    </div>
+    <div class="card-body">
+      <div class="decorated-name-text" title="${text}">${escapeHtml(text)}</div>
+    </div>
+    <div class="card-footer">
+      <div class="card-info">
+        <span class="name-length">${text.length} حرف</span>
+      </div>
+      <div class="card-actions">
+        <button class="fav-btn ${isFav ? 'active' : ''}" title="${isFav ? 'إزالة من المفضلة' : 'حفظ في المفضلة'}">
+          ${isFav ? '★' : '☆'}
+        </button>
+        <button class="copy-btn">
+          <svg class="copy-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+            <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+          </svg>
+          <span class="copy-label">نسخ</span>
+        </button>
+      </div>
+    </div>
+  `;
+
+  // Copy Action
+  const copyBtn = card.querySelector(".copy-btn");
+  copyBtn.addEventListener("click", () => {
+    copyTextToClipboard(text, `تم نسخ "${text}" بنجاح!`);
+    copyBtn.classList.add("copied");
+    copyBtn.querySelector(".copy-label").textContent = "تم النسخ!";
+    setTimeout(() => {
+      copyBtn.classList.remove("copied");
+      copyBtn.querySelector(".copy-label").textContent = "نسخ";
+    }, 1500);
+  });
+
+  // Favorite Action
+  const favBtn = card.querySelector(".fav-btn");
+  favBtn.addEventListener("click", () => {
+    toggleFavorite(text);
+    playSound('click');
+    if (state.activeTab === "favorites") {
+      renderFavorites();
+    } else {
+      const activeNow = state.favorites.includes(text);
+      favBtn.classList.toggle("active", activeNow);
+      favBtn.textContent = activeNow ? '★' : '☆';
+      favBtn.title = activeNow ? 'إزالة من المفضلة' : 'حفظ في المفضلة';
+    }
+  });
+
+  return card;
+}
+
+// Toggle favorite state
+function toggleFavorite(text) {
+  const index = state.favorites.indexOf(text);
+  if (index > -1) {
+    state.favorites.splice(index, 1);
+    showToast("تمت الإزالة من المفضلة");
+  } else {
+    state.favorites.push(text);
+    showToast("⭐ تمت الإضافة إلى المفضلة!");
+  }
+  localStorage.setItem("gaming_favorites", JSON.stringify(state.favorites));
+}
+
+// Render Symbols Grid
+function renderSymbols(selectedCategoryId = "all") {
+  if (!elements.symbolsContainer) return;
+  elements.symbolsContainer.innerHTML = "";
+
+  SYMBOLS_DATA.forEach(cat => {
+    if (selectedCategoryId !== "all" && cat.id !== selectedCategoryId) {
+      return;
+    }
+
+    const group = document.createElement("div");
+    group.className = "symbol-category-group";
+
+    const title = document.createElement("h4");
+    title.className = "symbol-cat-title";
+    title.textContent = cat.category;
+    group.appendChild(title);
+
+    const symbolsWrap = document.createElement("div");
+    symbolsWrap.className = "symbols-grid";
+
+    cat.symbols.forEach(sym => {
+      const symBtn = document.createElement("button");
+      symBtn.className = "symbol-item";
+      symBtn.textContent = sym;
+      symBtn.title = "انقر لإضافة الرمز للاسم أو نسخه";
+
+      symBtn.addEventListener("click", () => {
+        insertSymbolAtCursor(sym);
+        playSound('click');
+        showToast(`تمت إضافة الرمز: ${sym}`);
+      });
+
+      symbolsWrap.appendChild(symBtn);
+    });
+
+    group.appendChild(symbolsWrap);
+    elements.symbolsContainer.appendChild(group);
+  });
+}
+
+// Insert symbol into input field at cursor position
+function insertSymbolAtCursor(symbol) {
+  const input = elements.nameInput;
+  const startPos = input.selectionStart || input.value.length;
+  const endPos = input.selectionEnd || input.value.length;
+  
+  const val = input.value;
+  input.value = val.substring(0, startPos) + symbol + val.substring(endPos);
+  
+  // Set new cursor position after inserted symbol
+  input.focus();
+  input.selectionStart = input.selectionEnd = startPos + symbol.length;
+  
+  // Trigger update
+  state.currentInput = input.value;
+  updateResults();
+}
+
+// Clipboard Helper
+function copyTextToClipboard(text, successMsg = "تم النسخ بنجاح!") {
+  playSound('copy');
+  if (navigator.clipboard && window.isSecureContext) {
+    navigator.clipboard.writeText(text).then(() => {
+      showToast(successMsg);
+    }).catch(() => fallbackCopy(text, successMsg));
+  } else {
+    fallbackCopy(text, successMsg);
+  }
+}
+
+// Fallback clipboard method for older browsers or file:// context
+function fallbackCopy(text, successMsg) {
+  const textarea = document.createElement("textarea");
+  textarea.value = text;
+  textarea.style.position = "fixed";
+  textarea.style.left = "-9999px";
+  document.body.appendChild(textarea);
+  textarea.select();
+  try {
+    document.execCommand("copy");
+    showToast(successMsg);
+  } catch (err) {
+    showToast("تعذر النسخ، يرجى التحديد والنسخ يدوياً");
+  }
+  document.body.removeChild(textarea);
+}
+
+// Toast Notifications
+let toastTimeout;
+function showToast(message) {
+  if (!elements.toast || !elements.toastMessage) return;
+  elements.toastMessage.textContent = message;
+  elements.toast.classList.add("visible");
+  
+  clearTimeout(toastTimeout);
+  toastTimeout = setTimeout(() => {
+    elements.toast.classList.remove("visible");
+  }, 2200);
+}
+
+// Helper to escape HTML tags
+function escapeHtml(str) {
+  return str
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#039;");
+}
+
+</script>
 </body>
 </html>
